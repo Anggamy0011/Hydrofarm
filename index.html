@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HydroFarm - Sayuran Hidroponik Segar & Organik</title>
+  <meta name="description" content="Sayuran hidroponik segar dipanen setiap hari tanpa pestisida. Dikirim langsung ke rumah Anda dalam kondisi prima dari greenhouse steril modern.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+
+  <!-- Announcement Bar (Optional Top Bar) -->
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" id="brand-logo">
+        <div class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+          </svg>
+        </div>
+        <span class="logo-text"><span class="text-hydro">Hydro</span><span class="text-farm">Farm</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="main-nav" id="main-nav">
+        <a href="#home" class="nav-link active">Beranda</a>
+        <a href="#produk" class="nav-link">Produk</a>
+        <a href="#tentang" class="nav-link">Tentang Kami</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </nav>
+
+      <!-- Header Actions: Search & Shopping Cart -->
+      <div class="header-actions">
+        <!-- Live Search Input -->
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="search-input" placeholder="Cari sayur segar..." aria-label="Cari sayur segar">
+        </div>
+
+        <!-- Cart Button -->
+        <button class="cart-btn" id="cart-btn" aria-label="Buka Keranjang">
+          <svg class="cart-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <!-- Badge Tag -->
+            <div class="hero-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+              <span>100% BEBAS PESTISIDA & ORGANIK</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="hero-title">Sayuran Hidroponik<br>Segar</h1>
+
+            <!-- Subtitle -->
+            <p class="hero-description">
+              Ditanam tanpa pestisida, dipanen setiap hari dengan air steril yang tersaring, dan dikirim langsung ke rumah Anda dalam kondisi prima.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta">
+              <a href="#produk" class="btn btn-primary">
+                Belanja Sekarang
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#tentang" class="btn btn-secondary">Pelajari Metode Kami</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Section -->
+    <section class="category-section" id="kategori">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">CARI BERDASARKAN</span>
+          <h2 class="section-title">Kategori Produk</h2>
+        </div>
+
+        <div class="category-grid">
+          <!-- Category 1: Selada -->
+          <div class="category-card" data-category="selada">
+            <div class="category-img-box">
+              <img src="assets/images/cat-selada.png" alt="Selada" loading="lazy">
+            </div>
+            <h3 class="category-name">Selada</h3>
+            <p class="category-sub">Renyah & Segar</p>
+          </div>
+
+          <!-- Category 2: Kangkung -->
+          <div class="category-card" data-category="kangkung">
+            <div class="category-img-box">
+              <img src="assets/images/cat-kangkung.png" alt="Kangkung" loading="lazy">
+            </div>
+            <h3 class="category-name">Kangkung</h3>
+            <p class="category-sub">Nutrisi Tinggi</p>
+          </div>
+
+          <!-- Category 3: Bayam -->
+          <div class="category-card" data-category="bayam">
+            <div class="category-img-box">
+              <img src="assets/images/cat-bayam.png" alt="Bayam" loading="lazy">
+            </div>
+            <h3 class="category-name">Bayam</h3>
+            <p class="category-sub">Zat Besi Alami</p>
+          </div>
+
+          <!-- Category 4: Pakcoy -->
+          <div class="category-card" data-category="pakcoy">
+            <div class="category-img-box">
+              <img src="assets/images/cat-pakcoy.png" alt="Pakcoy" loading="lazy">
+            </div>
+            <h3 class="category-name">Pakcoy</h3>
+            <p class="category-sub">Sangat Renyah</p>
+          </div>
+
+          <!-- Category 5: Herba -->
+          <div class="category-card" data-category="herba">
+            <div class="category-img-box">
+              <img src="assets/images/cat-herba.png" alt="Herba" loading="lazy">
+            </div>
+            <h3 class="category-name">Herba</h3>
+            <p class="category-sub">Aromatik Segar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products-section" id="produk">
+      <div class="container">
+        <div class="products-header">
+          <div class="products-header-left">
+            <span class="section-tag">PANEN TERBARU MINGGU INI</span>
+            <h2 class="section-title">Produk Pilihan</h2>
+          </div>
+          <div class="products-header-right">
+            <button class="view-all-link" id="reset-filter-btn">
+              Lihat Semua Produk
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="product-grid">
+
+          <!-- Product 1 -->
+          <div class="product-card" data-id="1" data-name="Selada Romaine Premium" data-price="18000" data-category="selada">
+            <div class="product-img-box">
+              <span class="product-badge badge-panen">Panen</span>
+              <img src="assets/images/prod-selada-romaine.png" alt="Selada Romaine Premium" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Selada Romaine Premium</h3>
+              <div class="product-meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                  <line x1="16" y1="8" x2="2" y2="22"></line>
+                  <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                </svg>
+                <span>250g</span>
+              </div>
+              <div class="product-bottom">
+                <div class="product-price">Rp 18.000</div>
+                <button class="add-to-cart-btn" onclick="addToCart(1)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  <span>Keranjang</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card" data-id="2" data-name="Bayam Hijau Super" data-price="14500" data-category="bayam">
+            <div class="product-img-box">
+              <span class="product-badge badge-organik">Organik</span>
+              <img src="assets/images/prod-bayam-super.png" alt="Bayam Hijau Super" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Bayam Hijau Super</h3>
+              <div class="product-meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                  <line x1="16" y1="8" x2="2" y2="22"></line>
+                </svg>
+                <span>200g</span>
+              </div>
+              <div class="product-bottom">
+                <div class="product-price">Rp 14.500</div>
+                <button class="add-to-cart-btn" onclick="addToCart(2)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  <span>Keranjang</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card" data-id="3" data-name="Kangkung Hidroponik" data-price="12000" data-category="kangkung">
+            <div class="product-img-box">
+              <span class="product-badge badge-hidroponik">Hidroponik</span>
+              <img src="assets/images/prod-kangkung-hidroponik.png" alt="Kangkung Hidroponik" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Kangkung Hidroponik</h3>
+              <div class="product-meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                </svg>
+                <span>300g</span>
+              </div>
+              <div class="product-bottom">
+                <div class="product-price">Rp 12.000</div>
+                <button class="add-to-cart-btn" onclick="addToCart(3)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  <span>Keranjang</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card" data-id="4" data-name="Pakcoy Baby Renyah" data-price="15000" data-category="pakcoy">
+            <div class="product-img-box">
+              <span class="product-badge badge-laris">Laris Manis</span>
+              <img src="assets/images/prod-pakcoy-baby.png" alt="Pakcoy Baby Renyah" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Pakcoy Baby Renyah</h3>
+              <div class="product-meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                </svg>
+                <span>250g</span>
+              </div>
+              <div class="product-bottom">
+                <div class="product-price">Rp 15.000</div>
+                <button class="add-to-cart-btn" onclick="addToCart(4)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  <span>Keranjang</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us / Value Proposition Section -->
+    <section class="features-section" id="tentang">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">KENAPA KAMI UNGGUL</span>
+          <h2 class="section-title">Mengapa Memilih HydroFarm?</h2>
+        </div>
+
+        <div class="feature-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">100% Segar</h3>
+            <p class="feature-desc">Dipanen di pagi hari ketika nutrisi maksimal dan dikirim langsung untuk kesegaran optimum.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Tanpa Pestisida</h3>
+            <p class="feature-desc">Ditanam di greenhouse steril modern bebas polusi dan sama sekali tanpa bahan kimia beracun.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature-title">Panen Harian</h3>
+            <p class="feature-desc">Tidak ada stok sayur lemas menginap. Hanya sayuran segar yang baru saja dipotong dari jalurnya.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="2"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <h3 class="feature-title">Pengiriman Cepat</h3>
+            <p class="feature-desc">Kurir berpendingin khusus menjaga rantai dingin agar nutrisi sayuran tetap terjaga utuh.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Promo Banner Section -->
+    <section class="promo-section">
+      <div class="container">
+        <div class="promo-banner">
+          <div class="promo-content">
+            <span class="promo-badge">PROMO SPESIAL BULAN INI</span>
+            <h2 class="promo-title">Gratis Ongkir untuk Pesanan Pertama!</h2>
+            <p class="promo-desc">Gunakan kode kupon <strong>MULAISEGAR</strong> tanpa minimal pembelian.</p>
+          </div>
+          <div class="promo-action">
+            <button class="btn btn-promo" onclick="applyPromoCode('MULAISEGAR')">
+              Pesan Sekarang
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">TESTIMONI PETANI</span>
+          <h2 class="section-title">Apa Kata Pelanggan Kami?</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <!-- Review 1 -->
+          <div class="testimonial-card">
+            <div class="star-rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-quote">
+              "Kualitas sayurnya luar biasa renyah! Baru kali ini anak saya doyan makan selada karena manis dan tidak pahit sama sekali. Bener-bener terasa bedanya sayur sehat tanpa pestisida."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/avatar-amalia.png" alt="Amalia Putri" class="author-avatar" loading="lazy">
+              <div class="author-info">
+                <h4 class="author-name">Amalia Putri</h4>
+                <p class="author-role">Ibu Rumah Tangga</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="testimonial-card">
+            <div class="star-rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-quote">
+              "Sangat praktis untuk program diet hijau saya harian. Pengiriman paginya selalu tepat waktu, sayurnya tiba dalam keadaan segar bugar seperti baru dipetik."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/avatar-budi.png" alt="Budi Santoso" class="author-avatar" loading="lazy">
+              <div class="author-info">
+                <h4 class="author-name">Budi Santoso</h4>
+                <p class="author-role">Healthy Lifestyle Enthusiast</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="testimonial-card">
+            <div class="star-rating">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-quote">
+              "Saya merekomendasikan HydroFarm ke pasien saya yang mencari sayuran bernutrisi tinggi dan higienis. Metode hidroponik terstruktur mereka menjamin kebersihan maksimal."
+            </p>
+            <div class="testimonial-author">
+              <img src="assets/images/avatar-clara.png" alt="dr. Clara E." class="author-avatar" loading="lazy">
+              <div class="author-info">
+                <h4 class="author-name">dr. Clara E.</h4>
+                <p class="author-role">Ahli Gizi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer" id="kontak">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-brand">
+          <a href="#" class="brand-logo footer-logo">
+            <div class="logo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+            <span class="logo-text"><span class="text-hydro-white">Hydro</span><span class="text-farm">Farm</span></span>
+          </a>
+          <p class="footer-desc">
+            Kemitraan membawa pertanian masa depan ke meja makan Anda. Sayuran premium hasil budidaya steril berkualitas tinggi yang dipanen setiap hari demi kesehatan keluarga tercinta.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="WhatsApp" class="social-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-title">Navigasi Cepat</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#produk">Produk Pilihan</a></li>
+            <li><a href="#tentang">FAQ</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Info -->
+        <div class="footer-col">
+          <h4 class="footer-title">Hubungi Kami</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>info@hydrofarm.co.id</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>+62 821-555-0190</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Greenhouse Blok G-12, Agrotech Park, Tangerang, Banten</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Payment Methods -->
+        <div class="footer-col">
+          <h4 class="footer-title">Metode Pembayaran</h4>
+          <div class="payment-pills">
+            <span class="payment-pill">BCA</span>
+            <span class="payment-pill">Mandiri</span>
+            <span class="payment-pill">GoPay</span>
+            <span class="payment-pill">QRIS</span>
+            <span class="payment-pill">DANA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 HydroFarm Indonesia. Semua hak cipta dilindungi Undang-Undang.</p>
+        <p class="made-with">Dibuat dengan cinta untuk bumi & kesehatan</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title">Keranjang Belanja</h3>
+      <button class="cart-close-btn" id="cart-close" aria-label="Tutup Keranjang">&times;</button>
+    </div>
+    
+    <div class="cart-drawer-body" id="cart-items-container">
+      <!-- Dynamic Cart Items Rendered via JS -->
+      <div class="cart-empty" id="cart-empty">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+        </svg>
+        <p>Keranjang Anda masih kosong.</p>
+        <button class="btn btn-primary" onclick="closeCart(); location.href='#produk';">Mulai Belanja</button>
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cart-footer">
+      <div class="coupon-box">
+        <input type="text" id="coupon-input" placeholder="Kode Kupon (contoh: MULAISEGAR)">
+        <button onclick="applyCouponInput()">Pakai</button>
+      </div>
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">Rp 0</span>
+      </div>
+      <div class="cart-summary-row text-green" id="discount-row" style="display: none;">
+        <span>Diskon Ongkir (MULAISEGAR)</span>
+        <span>- Rp 10.000</span>
+      </div>
+      <div class="cart-summary-row total-row">
+        <span>Total</span>
+        <span id="cart-total">Rp 0</span>
+      </div>
+      <button class="btn btn-primary checkout-btn" onclick="checkout()">Checkout Sekarang</button>
+    </div>
+  </aside>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
