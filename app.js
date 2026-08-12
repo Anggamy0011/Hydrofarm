@@ -13,7 +13,7 @@ const products = [
     weight: "250g",
     badge: "Panen",
     badgeClass: "badge-panen",
-    image: "assets/images/prod-selada-romaine-exact.png"
+    image: "assets/images/prod-selada-romaine.png"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const products = [
     weight: "200g",
     badge: "Organik",
     badgeClass: "badge-organik",
-    image: "assets/images/prod-bayam-super-exact.png"
+    image: "assets/images/prod-bayam-super.png"
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const products = [
     weight: "300g",
     badge: "Hidroponik",
     badgeClass: "badge-hidroponik",
-    image: "assets/images/prod-kangkung-hidroponik-exact.png"
+    image: "assets/images/prod-kangkung-hidroponik.png"
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const products = [
     weight: "250g",
     badge: "Laris Manis",
     badgeClass: "badge-laris",
-    image: "assets/images/prod-pakcoy-baby-exact.png"
+    image: "assets/images/prod-pakcoy-baby.png"
   }
 ];
 
