@@ -462,8 +462,8 @@ img {
 }
 
 .category-img-box {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   margin: 0 auto 12px auto;
   display: flex;
   align-items: center;
@@ -471,7 +471,7 @@ img {
   border-radius: 50%;
   overflow: hidden;
   background-color: #f3f4f6;
-  padding: 8px;
+  padding: 4px;
 }
 
 .category-img-box img {
