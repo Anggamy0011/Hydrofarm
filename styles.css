@@ -462,8 +462,8 @@ img {
 }
 
 .category-img-box {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   margin: 0 auto 12px auto;
   display: flex;
   align-items: center;
