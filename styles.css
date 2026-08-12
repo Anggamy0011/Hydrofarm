@@ -1219,6 +1219,7 @@ img {
 @media (max-width: 768px) {
   .header-inner {
     height: 70px;
+    gap: 12px;
   }
 
   .main-nav {
@@ -1241,6 +1242,13 @@ img {
 
   .mobile-toggle {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--color-text-main);
+    padding: 8px;
+    cursor: pointer;
   }
 
   .search-box input {
@@ -1252,15 +1260,29 @@ img {
   }
 
   .hero-content {
-    padding: 36px 24px;
+    padding: 36px 20px;
   }
 
   .hero-title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .category-card {
+    padding: 16px 12px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .product-card {
+    padding: 12px;
   }
 
   .testimonial-grid {
@@ -1271,7 +1293,7 @@ img {
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
-    padding: 32px 24px;
+    padding: 24px 20px;
   }
 
   .footer-top {
@@ -1282,5 +1304,40 @@ img {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 0 16px;
+  }
+
+  .brand-logo .logo-text {
+    font-size: 18px;
+  }
+
+  .search-box input {
+    width: 100px;
+  }
+
+  .search-box input:focus {
+    width: 130px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-cta .btn {
+    width: 100%;
   }
 }
