@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HydroFarm - Admin Panel Dashboard</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Identity Services Library -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+  <!-- Mobile Sidebar Overlay Backdrop -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleMobileSidebar()"></div>
+
+  <!-- Sidebar Navigation Drawer -->
+  <aside class="sidebar" id="sidebar">
+    <a href="#" class="sidebar-logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+      </svg>
+      <span><span class="hydro">Hydro</span><span class="farm">Farm</span></span>
+    </a>
+
+    <ul class="sidebar-menu">
+      <li>
+        <a class="menu-item active" onclick="switchSection('dashboard')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" onclick="switchSection('products')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+          </svg>
+          Manajemen Produk
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" onclick="switchSection('orders')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          Pesanan Masuk
+        </a>
+      </li>
+      <li>
+        <a class="menu-item" onclick="switchSection('coupons')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+          Kupon Diskon
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="user-badge" id="admin-user-badge">
+        <div class="user-avatar" id="admin-avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="user-info">
+          <span class="user-name" id="admin-name">Belum Login</span>
+          <span class="user-role" id="admin-role">ADMIN</span>
+        </div>
+      </div>
+      <button class="btn-logout-sidebar" onclick="logoutAdmin()" title="Keluar dari Admin">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        <span>Keluar</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <div class="main-wrapper">
+    <!-- Topbar Header -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="admin-mobile-toggle" id="admin-mobile-toggle" onclick="toggleMobileSidebar()" aria-label="Toggle Navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <h1 class="page-title" id="page-title">Dashboard Overview</h1>
+      </div>
+    </header>
+
+    <!-- Content Area -->
+    <main class="dashboard-content">
+      
+      <!-- Section: Dashboard Overview -->
+      <section id="section-dashboard">
+        <!-- Stats Cards Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-info">
+              <div class="stat-label">Total Pendapatan</div>
+              <div class="stat-value" id="stat-revenue">Rp 4.850.000</div>
+            </div>
+            <div class="stat-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <div class="stat-label">Produk Aktif</div>
+              <div class="stat-value" id="stat-products-count">4 Sayur</div>
+            </div>
+            <div class="stat-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+              </svg>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <div class="stat-label">Total Pesanan</div>
+              <div class="stat-value" id="stat-orders-count">18 Pesanan</div>
+            </div>
+            <div class="stat-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <div class="stat-label">Menunggu Diproses</div>
+              <div class="stat-value" id="stat-pending-count">0 Pesanan</div>
+            </div>
+            <div class="stat-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders Table -->
+        <div class="admin-card" style="margin-top: 32px;">
+          <div class="card-header">
+            <h2 class="card-title">Pesanan Masuk Terbaru</h2>
+            <button class="btn-primary-admin" onclick="switchSection('orders')">Lihat Semua Pesanan</button>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>No. Pesanan</th>
+                  <th>Pelanggan</th>
+                  <th>Total Transaksi</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="recent-orders-body">
+                <!-- Rendered dynamically via admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Products Management -->
+      <section id="section-products" style="display: none;">
+        <div class="admin-card">
+          <div class="card-header">
+            <h2 class="card-title">Katalog Produk Sayuran</h2>
+            <button class="btn-primary-admin" onclick="openAddProductModal()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              Tambah Produk Baru
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Foto</th>
+                  <th>Nama Sayuran</th>
+                  <th>Kategori</th>
+                  <th>Harga</th>
+                  <th>Stok</th>
+                  <th>Badge</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="products-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Orders Management -->
+      <section id="section-orders" style="display: none;">
+        <div class="admin-card">
+          <div class="card-header">
+            <h2 class="card-title">Kelola Semua Pesanan</h2>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>No. Pesanan</th>
+                  <th>Penerima & Alamat</th>
+                  <th>Tanggal</th>
+                  <th>Total</th>
+                  <th>Status Pesanan</th>
+                  <th>Ubah Status</th>
+                </tr>
+              </thead>
+              <tbody id="all-orders-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Coupons Management -->
+      <section id="section-coupons" style="display: none;">
+        <div class="admin-card">
+          <div class="card-header">
+            <h2 class="card-title">Daftar Kupon Promo</h2>
+            <button class="btn-primary-admin" onclick="alert('Fitur pembuatan kupon baru diaktifkan!')">+ Tambah Kupon</button>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Kode Kupon</th>
+                  <th>Tipe Diskon</th>
+                  <th>Nilai Diskon</th>
+                  <th>Digunakan</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:var(--admin-accent);">MULAISEGAR</strong></td>
+                  <td>Nominal Tetap</td>
+                  <td>Rp 10.000</td>
+                  <td>42 / 1000 kali</td>
+                  <td><span class="badge-status status-paid">AKTIF</span></td>
+                </tr>
+                <tr>
+                  <td><strong style="color:var(--admin-accent);">HYDROHEALTHY</strong></td>
+                  <td>Persentase</td>
+                  <td>15%</td>
+                  <td>12 / 500 kali</td>
+                  <td><span class="badge-status status-paid">AKTIF</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Modal Form: Add / Edit Product -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-product-title">Tambah Produk Baru</h3>
+        <button class="modal-close" onclick="closeProductModal()">&times;</button>
+      </div>
+      <form id="product-form" onsubmit="saveProduct(event)">
+        <input type="hidden" id="product-id">
+        <div class="form-group">
+          <label>Nama Produk Sayur</label>
+          <input type="text" id="product-name" required placeholder="Contoh: Selada Butterhead Premium">
+        </div>
+        <div class="form-group">
+          <label>Kategori</label>
+          <select id="product-category">
+            <option value="cat-1">Selada</option>
+            <option value="cat-2">Kangkung</option>
+            <option value="cat-3">Bayam</option>
+            <option value="cat-4">Pakcoy</option>
+            <option value="cat-5">Herba</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Harga (Rp)</label>
+          <input type="number" id="product-price" required placeholder="18000">
+        </div>
+        <div class="form-group">
+          <label>Stok Persediaan (Pack)</label>
+          <input type="number" id="product-stock" required placeholder="50">
+        </div>
+        <div class="form-group">
+          <label>Label Badge</label>
+          <select id="product-badge">
+            <option value="Panen">Panen</option>
+            <option value="Organik">Organik</option>
+            <option value="Hidroponik">Hidroponik</option>
+            <option value="Laris Manis">Laris Manis</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>URL Foto Produk</label>
+          <input type="text" id="product-image" required placeholder="assets/images/prod-selada-romaine.png">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-cancel" onclick="closeProductModal()">Batal</button>
+          <button type="submit" class="btn-primary-admin">Simpan Produk</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
